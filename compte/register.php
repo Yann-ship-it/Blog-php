@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 require_once('./includes/db.php');
@@ -9,27 +10,27 @@ if (!empty($_POST)) {
 
     // Pseudo
     if (empty($_POST['username']) || !preg_match("#^[a-zA-Z0-9_]+$#", $_POST['username'])) {
-        $errors['username'] = "Votre pseudo n'est pas valide";
+        $errors['username'] = "Erreur : Pseudonyme incorrect";
     } else {
         // SELECT * FROM users WHERE username = post
         $query = "SELECT * FROM users WHERE username = ?";
         $req = $pdo->prepare($query);
         $req->execute([$_POST['username']]);
         if ($req->fetch()) {
-            $errors['username'] = "Ce pseudo n'est plus disponible";
+            $errors['username'] = "Erreur : Ce pseudonyme n'est pas disponible";
         }
     }
 
     // Email
     if (empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = "Votre email n'est pas valide";
+        $errors['email'] = "Erreur : Votre e-mail n'est pas valide";
     } else {
         // SELECT * FROM users WHERE email = post
         $query = "SELECT * FROM users WHERE email = ?";
         $req = $pdo->prepare($query);
         $req->execute([$_POST['email']]);
         if ($req->fetch()) {
-            $errors['email'] = "Cet email est déjà pris";
+            $errors['email'] = "Erreur : Cette adresse mail est déjà enregistré";
         }
     }
 
@@ -43,7 +44,7 @@ if (!empty($_POST)) {
         $req = $pdo->prepare($query);
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-        $token = generateToken(100);
+        $token = generateToken(10);
 
         $req->execute([$_POST['username'], $_POST['email'], $password, $token]);
         $userId = $pdo->lastInsertId();
@@ -52,7 +53,6 @@ if (!empty($_POST)) {
         $subject = "Confirmation du compte";
         $message = "Afin de confirmer votre compte,merci de cliquer sur ce lien\n\n
         http://localhost/gestion_compte_utilisateur/confirm.php?id=$userId&token=$token";
-
         mail($mail, $subject, $message);
 
         $_SESSION['flash']['success'] = "Compte créé avec sucèss. Veillez vérifier votre boite mail afin de confirmer votre compte";
@@ -61,12 +61,14 @@ if (!empty($_POST)) {
         exit();
     }
 }
+
+// Page HTML
 ?>
 <?php
 require_once './includes/header.php';
 ?>
 <div class="col-md-8 col-md-offset-2">
-    <h1 style="color: #fff;">S'inscrire</h1>
+    <h1 style="color: #fff;">Inscription</h1>
     <form action="" method="post">
         <fieldset>
             <div class="form-group">
@@ -82,10 +84,11 @@ require_once './includes/header.php';
                 <input type="password" id="password" class="form-control" name="password">
             </div>
             <div class="form-group">
-                <label for="password">Confirmer votre mot de passe</label>
-                <input type="password" id="password" class="form-control" name="password_confirm">
+                <label for="password">Confirmation</label>
+                <input type="password" id="password" class="form-control" name="password_confirm" >
             </div>
             <input type="submit" class="btn btn-primary" value="S'inscrire">
+            <a>Vous avez déjà un compte ?</a>
         </fieldset>
     </form>
 </div>
