@@ -189,6 +189,9 @@ header ul li a:hover {
   color: #006669;
 }
 
+.single .post-content {
+  word-wrap: anywhere;
+}
 
 .posts .posts-title {
   text-align: center;
@@ -199,7 +202,7 @@ header ul li a:hover {
   height: 350px;
   margin: 0px auto;
   overflow: hidden;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0 10px 0;
 }
 
 .posts .post-container .post {
