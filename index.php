@@ -1,14 +1,16 @@
 <?php
-    $host = 'localhost';
-    $user = 'root';
-    $pass = 'root';
-    $dbName = 'Blog';
+  require_once 'refactoring.php';
 
-    $pdo = new PDO('mysql:host='.$host.';dbname='.$dbName.';charset=utf8',$user,$pass,[
-            PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ]);
-?>
+  $page =1;
+  $perPage =3;
+  $total = pagination();
+  $pages = ceil($total / $perPage);
+  if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+
+  }
+    $posts = selectAll($page,$perPage);
+  ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
-  <title>Blog</title>
+  <title>TP - Blog (PHP)</title>
 </head>
 <body>
  <?php include('inc/header.php') ?>
@@ -49,7 +51,5 @@
       <?php }
       ?>
     </div>
-    
-    <!-- footer -->
+
     <?php include('inc/footer.php') ?>
-  <!-- // footer -->
