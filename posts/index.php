@@ -31,7 +31,7 @@ if (isset($_GET['page'])) {
     </head>
 
     <body>
-    <?php include('../inc/header.php') ?>
+    <?php include('../comp/header.php') ?>
 
         <!-- Admin Page Wrapper -->
         <div class="admin-container">
@@ -73,7 +73,7 @@ if (isset($_GET['page'])) {
       ?>
     </div>
         <!-- // Page Wrapper -->
-        <?php include('../inc/footer.php') ?>
+        <?php include('../comp/footer.php') ?>
 
 
     </body>

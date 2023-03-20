@@ -67,7 +67,7 @@
 
         </div>
         <!-- // Page Wrapper -->
-        <?php include('../inc/footer.php') ?>
+        <?php include('../comp/footer.php') ?>
 
     </body>
 

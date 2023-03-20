@@ -53,7 +53,7 @@ $errors = array();
     </head>
 
     <body>
-    <?php include('../inc/header.php') ?>
+    <?php include('../comp/header.php') ?>
 
         <!-- Admin Page Wrapper -->
         <div class="admin-container">
@@ -97,7 +97,7 @@ $errors = array();
             </div>
         </div>
         <!-- footer -->
-    <?php include('../inc/footer.php') ?>
+    <?php include('../comp/footer.php') ?>
   <!-- // footer -->
 
 

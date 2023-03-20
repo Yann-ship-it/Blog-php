@@ -17,7 +17,7 @@
 <body>
 
 
-<?php include('inc/header.php') ?>
+<?php include('comp/header.php') ?>
 
   <!-- Page Wrapper -->
   <div class="page-container">
@@ -74,7 +74,7 @@
      
 
   <!-- footer -->
-  <?php include('inc/footer.php') ?>
+  <?php include('comp/footer.php') ?>
   <!-- // footer -->
 
 </body>
