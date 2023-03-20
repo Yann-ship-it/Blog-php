@@ -41,7 +41,7 @@ if (isset($_POST['update-post'])) {
        
         $_POST['content'] = nl2br(htmlentities($_POST['content']));
     
-        $post_id = updatePost($id,$_POST['author'],$_POST['title'],$_POST['content'],$_POST['image']);
+        $id = updatePost($id,$_POST['author'],$_POST['title'],$_POST['content'],$_POST['image']);
         $_SESSION['message'] = "Post updated successfully";
         $_SESSION['type'] = "success";
         header("location: index.php");       

@@ -1,5 +1,5 @@
-<?php  require_once 'refactoring.php'; ?>
-<?php  include 'traitement.php'; ?>
+<?php require_once 'refactoring.php'; ?>
+<?php include 'traitement.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
 
 <?php include('comp/header.php') ?>
 
@@ -41,7 +40,7 @@
           <?php foreach ($comments as $comment): ?>
           
             <div class="comment">
-              <h3 class="auteur">Ecrit par <?php echo $comment['author']; ?> : </h3>
+              <h3 class="auteur">Ecrit par <?php echo $comment['post_author']; ?> : </h3>
               <p class="contenu" ><?php echo $comment['post_comment']; ?><br>
               <i class="far fa-calendar"> <?php echo date('d F, Y', strtotime($comment['post_datecom'])); ?></i>
               <a class="sup" href="single.php?id=<?php echo $id ?>&amp;id_comment_delete=<?php echo $comment['id']; ?>">Supprimer</a>

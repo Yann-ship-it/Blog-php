@@ -24,7 +24,7 @@ $errors = array();
            
             $_POST['content'] = htmlentities($_POST['content']);
         
-            $post_id = create($_POST['author'],$_POST['title'],$_POST['content'],$_POST['image']);
+            $id = create($_POST['author'],$_POST['title'],$_POST['content'],$_POST['image']);
             
             header("location: index.php"); 
             exit();    

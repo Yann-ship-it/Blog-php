@@ -20,7 +20,7 @@
     </head>
 
     <body>
-    <?php include('../inc/header.php') ?>
+    <?php include('../comp/header.php') ?>
         <!-- Admin Page Wrapper -->
         <div class="admin-container">
 
