@@ -79,10 +79,10 @@ function deleteComment($id){
     $query->execute(['id'=> $id]); 
 }
 
-function saveComment($author,$post_id,$comment){
+function saveComment($post_author,$post_id,$post_comment){
     $pdo =getPDO();
-    $query = $pdo->prepare('INSERT INTO comments(post_id,author,comment,created_at) VALUES(:post_id,:author,:comment,NOW())');
-    $query->execute(compact('post_id','author','comment'));
+    $query = $pdo->prepare('INSERT INTO comments(post_id,post_author,post_comment,post_datecom) VALUES(:post_id,:post_author,:post_comment,NOW())');
+    $query->execute(compact('post_id','post_author','post_comment'));
     return $query;
 }
 ?>
