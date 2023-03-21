@@ -1,10 +1,10 @@
 <?php
 
-function generateToken($length)
+function generateToken($length) // Crée un token pour l'authentification
 {
-    $alphaNum = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    $alphaNum = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; // Le token prendra en compte ce que nous allons mettre à l'intérieur
 
-    return substr(str_shuffle(str_repeat($alphaNum, $length)), 0, $length);
+    return substr(str_shuffle(str_repeat($alphaNum, $length)), 0, $length); // shuffle va mélanger notre alphanum et le repeat va répéter pour avoir un token aléatoire
 }
 
 function is_connect()

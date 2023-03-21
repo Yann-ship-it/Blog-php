@@ -49,13 +49,14 @@ if (!empty($_POST)) {
         $req->execute([$_POST['username'], $_POST['email'], $password, $token]);
         $userId = $pdo->lastInsertId();
 
-        $mail = $_POST['email'];
+        $mail = 'yy.iris85@gmail.com';
         $subject = "Confirmation du compte";
         $message = "Afin de confirmer votre compte,merci de cliquer sur ce lien\n\n
         http://localhost/gestion_compte_utilisateur/confirm.php?id=$userId&token=$token";
         mail($mail, $subject, $message);
 
-        $_SESSION['flash']['success'] = "Compte créé avec sucèss. Veillez vérifier votre boite mail afin de confirmer votre compte";
+
+        $_SESSION['flash']['success'] = "Compte créé, veillez vérifier votre boite mail afin de confirmer votre compte";
 
         header("Location: login.php");
         exit();

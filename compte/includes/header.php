@@ -36,6 +36,7 @@ if (session_status() == PHP_SESSION_NONE) {
                         <li class="active"><a href="register.php">S'enregistrer <span class="sr-only"></span></a></li>
                         <li><a href="login.php">Se connecter</a></li>
                     <?php endif; ?>
+                    <li><a href="admin_compte.php">Admin</a></li>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">

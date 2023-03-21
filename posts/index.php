@@ -20,6 +20,7 @@ if (isset($_GET['page'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://kit.fontawesome.com/ea2a4f6de0.js" crossorigin="anonymous"></script>
 
         <!-- Custom Styling -->
         <link rel="stylesheet" href="../css/style.css">
@@ -56,8 +57,8 @@ if (isset($_GET['page'])) {
                                     <td><?php echo $key + 1; ?></td>
                                     <td><?php echo $post['title'] ?></td>
                                     <td><?php echo $post['author'] ?></td>
-                                    <td><a href="edit.php?id=<?php echo $post['id']; ?>" class="edit">edit</a></td>
-                                    <td><a href="edit.php?delete_id=<?php echo $post['id']; ?>" class="delete">delete</a></td>  
+                                    <td><a title="Modifier" href="edit.php?id=<?php echo $post['id']; ?>" class="edit"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                    <td><a title="Supprimer" href="edit.php?delete_id=<?php echo $post['id']; ?>" class="delete"><i class="fa-solid fa-trash"></i></a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
