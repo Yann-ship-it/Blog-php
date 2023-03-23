@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once './includes/db.php';
-require_once './includes/functions.php';
+require_once './db.php';
+require_once './functions.php';
 
 reconnect_auto();
 
@@ -54,5 +54,5 @@ if (!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])) 
 </div>
 
 <?php
-require_once './includes/footer.php';
+require_once './footer.php';
 ?>

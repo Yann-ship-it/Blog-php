@@ -1,5 +1,5 @@
 <?php
-require_once './includes/db.php';
+require_once './db.php';
 session_start();
 
 if (isset($_GET['id']) && isset($_GET['token'])) {
@@ -41,7 +41,7 @@ if (isset($_GET['id']) && isset($_GET['token'])) {
 
 ?>
 
-<?php require_once './includes/header.php'; ?>
+<?php require_once './header.php'; ?>
 
 <div class="col-md-8 col-md-offset-2">
     <h1 style="color: #fff;">Réinitialiser votre mot de passe</h1>
@@ -64,5 +64,5 @@ if (isset($_GET['id']) && isset($_GET['token'])) {
 </div>
 
 <?php
-require_once './includes/footer.php';
+require_once './footer.php';
 ?>

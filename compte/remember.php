@@ -1,6 +1,6 @@
 <?php
-require_once './includes/db.php';
-require_once './includes/functions.php';
+require_once './db.php';
+require_once './functions.php';
 
 if (!empty($_POST) && !empty($_POST['email'])) {
     $query = "SELECT * FROM users WHERE email =? AND confirmed_at IS NOT NULL";
@@ -31,7 +31,7 @@ if (!empty($_POST) && !empty($_POST['email'])) {
     }
 }
 ?>
-<?php require_once './includes/header.php'; ?>
+<?php require_once './header.php'; ?>
 
 <div class="col-md-8 col-md-offset-2">
     <h1 style="color: #fff;">Rappel du mot de passe</h1>
@@ -50,5 +50,5 @@ if (!empty($_POST) && !empty($_POST['email'])) {
 </div>
 
 <?php
-require_once './includes/footer.php';
+require_once './footer.php';
 ?>

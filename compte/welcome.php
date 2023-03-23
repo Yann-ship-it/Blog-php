@@ -1,14 +1,14 @@
 <?php
 session_start();
-require_once './includes/functions.php';
+require_once './functions.php';
 
 reconnect_auto();
 is_connect();
 
-require_once './includes/header.php';
+require_once './header.php';
 ?>
 
 <h1>Hello <?= $_SESSION['auth']->username ?></h1>
 <?php
-require_once './includes/footer.php';
+require_once './footer.php';
 ?>

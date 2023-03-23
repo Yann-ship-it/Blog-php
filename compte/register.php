@@ -1,8 +1,8 @@
 
 <?php
 session_start();
-require_once('./includes/db.php');
-require_once('./includes/functions.php');
+require_once('./db.php');
+require_once('./functions.php');
 
 if (!empty($_POST)) {
 
@@ -93,5 +93,5 @@ if (!empty($_POST)) {
 </div>
 
 <?php
-require_once './includes/footer.php';
+require_once './footer.php';
 ?>

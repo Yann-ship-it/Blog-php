@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once './includes/db.php';
+require_once './db.php';
 
 $userId = $_GET['id'];
 $token = $_GET['token'];
