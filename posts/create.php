@@ -26,7 +26,7 @@ $errors = array();
         
             $post_id = create($_POST['author'],$_POST['title'],$_POST['content'],$_POST['image']);
             
-            header("location: welcome.php");
+            header("location: index.php");
             exit();    
         } else {
             $title = $_POST['title'];

@@ -1,8 +1,8 @@
 
 <?php
 session_start();
-require_once('./db.php');
-require_once('./functions.php');
+require_once('../more/db.php');
+require_once('../more/functions.php');
 
 if (!empty($_POST)) {
 

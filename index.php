@@ -1,5 +1,6 @@
 <?php
   require_once 'refactoring.php';
+  require_once './more/functions.php';
 
   $page =1;
   $perPage =3;
@@ -31,6 +32,7 @@
     <!-- Post Slider -->
     <div class="posts">
       <h2 class="page-title">Articles</h2>
+    <p><?php echo 'L adresse IP de l utilisateur est : ' . getIp();?></p>
       <div class="post-container">
         <?php foreach ($posts as $post): ?>
             <div class="post">

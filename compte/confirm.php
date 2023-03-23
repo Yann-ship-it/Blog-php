@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once './db.php';
+require_once '../more/db.php';
 
 $userId = $_GET['id'];
 $token = $_GET['token'];
@@ -16,7 +16,7 @@ if ($user && $token == $user->confirmation_token) {
     $_SESSION['flash']['success'] = "Votre compte a bien été validé";
     $_SESSION['auth'] = $user;
 
-    header('Location: welcome.php');
+    header('Location: index.php');
 } else {
     $_SESSION['flash']['danger'] = "Ce compte n'existe pas";
     header('Location: register.php');

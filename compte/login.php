@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once './db.php';
-require_once './functions.php';
+require_once '../more/db.php';
+require_once '../more/functions.php';
 
 reconnect_auto();
 
@@ -24,7 +24,7 @@ if (!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])) 
            setcookie("remember",$user->id . "::".$remember_token. sha1($user->id ."Ronasdev"),time()+ 60* 60 * 24 * 7);
         }
 
-        header("Location: Index.php");
+        header("Location: index.php");
         exit();
     }else{
         $_SESSION['flash']['danger'] = "Identifiant ou mot de passe incorrect";

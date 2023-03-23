@@ -1,5 +1,5 @@
 <?php
-require_once './db.php';
+require_once '../more/db.php';
 session_start();
 
 if (isset($_GET['id']) && isset($_GET['token'])) {
@@ -21,7 +21,7 @@ if (isset($_GET['id']) && isset($_GET['token'])) {
 
                 $_SESSION['flash']['success'] = "Votre mot de passe a bien été mise à jours";
                 $_SESSION['auth'] = $user;
-                header('Location: welcome.php');
+                header('Location: index.php');
                 exit();
             } else {
                 $_SESSION['flash']['danger'] = "Les deux mots de passes ne correspondent pas !";

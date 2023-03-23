@@ -1,6 +1,6 @@
 <?php
-require_once './db.php';
-require_once './functions.php';
+require_once '../more/db.php';
+require_once '../more/functions.php';
 
 if (!empty($_POST) && !empty($_POST['email'])) {
     $query = "SELECT * FROM users WHERE email =? AND confirmed_at IS NOT NULL";
