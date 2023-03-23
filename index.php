@@ -19,18 +19,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/ea2a4f6de0.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
   <title>TP - Blog (PHP)</title>
 </head>
 <body>
  <?php include('comp/header.php') ?>
 
-  <!-- Page Wrapper -->
-  <div class="page-container">
-
     <!-- Post Slider -->
     <div class="posts">
-      <h1 class="posts-title">Articles</h1>
+      <h2 class="page-title">Articles</h2>
       <div class="post-container">
         <?php foreach ($posts as $post): ?>
             <div class="post">
@@ -44,7 +44,7 @@
             </div>
           <?php endforeach; ?>
       </div>
-    </div>
+
     <div class="pagination">
       <?php
         for ($i=1; $i <= $pages ; $i++) { ?>

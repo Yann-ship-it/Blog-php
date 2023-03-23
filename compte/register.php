@@ -52,7 +52,7 @@ if (!empty($_POST)) {
         $mail = 'yy.iris85@gmail.com';
         $subject = "Confirmation du compte";
         $message = "Afin de confirmer votre compte,merci de cliquer sur ce lien\n\n
-        http://localhost/gestion_compte_utilisateur/confirm.php?id=$userId&token=$token";
+        http://localhost/compte/confirm.php?id=$userId&token=$token";
         mail($mail, $subject, $message);
 
 
@@ -65,9 +65,7 @@ if (!empty($_POST)) {
 
 // Page HTML
 ?>
-<?php
-require_once './includes/header.php';
-?>
+<?php include('../comp/header.php') ?>
 <div class="col-md-8 col-md-offset-2">
     <h1 style="color: #fff;">Inscription</h1>
     <form action="" method="post">

@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
     $post = selectOne($id);
     
     if (!$post) {
-        header('Location:index.php');
+        header('Location:welcome.php');
         exit();
     }
     $title = $post['title'];
@@ -44,7 +44,7 @@ if (isset($_POST['update-post'])) {
         $post_id = updatePost($id,$_POST['author'],$_POST['title'],$_POST['content'],$_POST['image']);
         $_SESSION['message'] = "Post updated successfully";
         $_SESSION['type'] = "success";
-        header("location: index.php");       
+        header("location: welcome.php");
     } else {
         $title = $_POST['title'];
         $author = $_POST['author'];
@@ -56,7 +56,7 @@ if (isset($_GET['delete_id'])) {
     $count = deletePost($_GET['delete_id']);
     $_SESSION['message'] = "Post deleted successfully";
     $_SESSION['type'] = "success";
-    header("Location: index.php"); 
+    header("Location: welcome.php");
     exit();
 }
 ?>

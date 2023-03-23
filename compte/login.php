@@ -31,7 +31,7 @@ if (!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])) 
     }
 }
 ?>
-<?php require_once './includes/header.php'; ?>
+<?php include('../comp/header.php') ?>
 <div class="col-md-8 col-md-offset-2">
     <h1 style="color: #fff;">Se connecter</h1>
     <form action="" method="post">

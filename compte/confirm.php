@@ -16,7 +16,7 @@ if ($user && $token == $user->confirmation_token) {
     $_SESSION['flash']['success'] = "Votre compte a bien été validé";
     $_SESSION['auth'] = $user;
 
-    header('Location: index.php');
+    header('Location: welcome.php');
 } else {
     $_SESSION['flash']['danger'] = "Ce compte n'existe pas";
     header('Location: register.php');

@@ -35,33 +35,32 @@
             <?php echo html_entity_decode($post['content']); ?>
           </div>
         </div>
-        <h1>Les commentaires</h1>
         <div class="comments">
+            <h2>Commentaires</h2>
           <?php foreach ($comments as $comment): ?>
           
-            <div class="comment">
-              <h3 class="auteur">Ecrit par <?php echo strip_tags($comment['author']); ?> : </h3>
+            <div class="comment"
+              <h3 class="auteur">Ecrit par <span class="authname"><?php echo strip_tags($comment['author']); ?><span> </h3>
               <p class="contenu" ><?php echo strip_tags($comment['comment']); ?><br>
               <i class="far fa-calendar"> <?php echo date('d F, Y', strtotime($comment['post_datecom'])); ?></i>
               <a class="sup" href="single.php?id=<?php echo $id ?>&amp;id_comment_delete=<?php echo $comment['id']; ?>">Supprimer</a>
               </p>
-              <br>
             </div>
           <?php endforeach; ?>
         </div>
         <br>
-        <form action="single.php"  method="post">
+        <form class="form-post" action="single.php"  method="post">
           <input type="hidden" name="id" value="<?php echo $id ?>">
-          <div>
-            <label>Votre Prenom:</label>
+          <div class="name">
+            <label>Votre Prenom</label>
             <input type="text" name="author" class="text-input">
           </div>
-          <div>
-            <label>Body:</label>
+          <div class="commentaire">
+            <label>Votre commentaire </label>
             <textarea name="comment" id="body" cols="130" rows="15"></textarea>
           </div><br>
           <div>
-              <button type="submit" name="add-comment" class="btn btn-big">Commentez</button>
+              <button type="submit" name="add-comment" class="bouton">Commentez</button>
           </div>
         </form>
         
